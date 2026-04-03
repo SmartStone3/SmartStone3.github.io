@@ -547,7 +547,9 @@ a:hover {
 
 .article-layout {
   margin-top: 1.4rem;
-  position: relative;
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 1.2rem;
 }
 
 .article-toc-mobile {
@@ -587,7 +589,11 @@ a:hover {
 }
 
 .article-toc {
-  display: none;
+  position: sticky;
+  top: 98px;
+  align-self: start;
+  border-right: 1px solid var(--line);
+  padding-right: 0.9rem;
   font-size: 0.9rem;
 }
 
@@ -1081,43 +1087,16 @@ body.lightbox-open {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .article-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .article-toc {
     display: none;
   }
 
   .article-toc-mobile {
     display: block;
-  }
-}
-
-@media (min-width: 981px) and (max-width: 1759px) {
-  .article-toc {
-    display: none;
-  }
-
-  .article-toc-mobile {
-    display: block;
-  }
-}
-
-@media (min-width: 1840px) {
-  .article-toc {
-    display: block;
-    position: fixed;
-    top: 108px;
-    left: calc((100vw - var(--container)) / 2 - 236px);
-    width: 220px;
-    max-height: calc(100vh - 128px);
-    overflow: auto;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    background: rgba(250, 247, 240, 0.95);
-    box-shadow: var(--shadow);
-    padding: 0.75rem 0.9rem;
-  }
-
-  .article-toc ul {
-    padding-left: 0.95rem;
   }
 }
 
