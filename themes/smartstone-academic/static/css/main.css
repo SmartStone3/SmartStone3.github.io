@@ -596,11 +596,19 @@ a:hover {
   position: sticky;
   top: 98px;
   align-self: start;
+  max-height: calc(100vh - 118px);
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   border-right: 1px solid var(--line);
   padding-right: 0.9rem;
   border-left: 0;
   padding-left: 0;
   font-size: 0.9rem;
+}
+
+.article-toc::-webkit-scrollbar {
+  display: none;
 }
 
 .article-toc-head {
