@@ -1,0 +1,49 @@
+baseURL = 'https://smartstone3.github.io/'
+languageCode = 'zh-cn'
+title = 'SmartStone Blog'
+theme = 'PaperMod'
+pagination.pagerSize = 10
+
+[taxonomies]
+  tag = 'tags'
+
+[params]
+  description = '记录 Unreal Engine、动画系统与技术开发笔记。'
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  defaultTheme = 'auto'
+  disableThemeToggle = false
+
+[params.homeInfoParams]
+  Title = '欢迎来到 SmartStone Blog'
+  Content = '这里分享 Unreal Engine 技术笔记、动画系统实践与开发心得。'
+
+[outputs]
+  home = ['HTML', 'RSS', 'JSON']
+
+[[menu.main]]
+  identifier = 'home'
+  name = '首页'
+  url = '/'
+  weight = 10
+
+[[menu.main]]
+  identifier = 'archives'
+  name = '归档'
+  url = '/archives/'
+  weight = 20
+
+[[menu.main]]
+  identifier = 'tags'
+  name = '标签'
+  url = '/tags/'
+  weight = 30
+
+[[menu.main]]
+  identifier = 'about'
+  name = '关于'
+  url = '/about/'
+  weight = 40
