@@ -593,23 +593,11 @@ a:hover {
 
 .article-toc {
   grid-area: toc;
-  max-height: calc(100vh - 230px);
-  overflow-y: auto;
-  scrollbar-width: thin;
   border-right: 1px solid var(--line);
   padding-right: 0.9rem;
   border-left: 0;
   padding-left: 0;
   font-size: 0.9rem;
-}
-
-.article-toc::-webkit-scrollbar {
-  width: 6px;
-}
-
-.article-toc::-webkit-scrollbar-thumb {
-  background: #c6ccbf;
-  border-radius: 999px;
 }
 
 .article-toc-head {
@@ -1133,8 +1121,6 @@ body.lightbox-open {
 
   .article-toc {
     display: none;
-    max-height: none;
-    overflow: visible;
     border-right: 0;
     padding-right: 0;
   }
