@@ -89,6 +89,9 @@
     };
 
     var setActive = function (id) {
+      if (!id || activeId === id) {
+        return;
+      }
       activeId = id;
       allLinks.forEach(function (link) {
         link.classList.remove("active");
@@ -108,14 +111,18 @@
           }
         }
         if (targetLink) {
-          var tocRect = desktopToc.getBoundingClientRect();
-          var linkRect = targetLink.getBoundingClientRect();
           var topPadding = 42;
           var bottomPadding = 18;
-          if (linkRect.top < tocRect.top + topPadding) {
-            desktopToc.scrollTop -= (tocRect.top + topPadding - linkRect.top);
-          } else if (linkRect.bottom > tocRect.bottom - bottomPadding) {
-            desktopToc.scrollTop += (linkRect.bottom - (tocRect.bottom - bottomPadding));
+          var tocRect = desktopToc.getBoundingClientRect();
+          var linkRect = targetLink.getBoundingClientRect();
+          var linkTop = linkRect.top - tocRect.top + desktopToc.scrollTop;
+          var linkBottom = linkTop + linkRect.height;
+          var viewTop = desktopToc.scrollTop + topPadding;
+          var viewBottom = desktopToc.scrollTop + desktopToc.clientHeight - bottomPadding;
+          if (linkTop < viewTop) {
+            desktopToc.scrollTo({ top: Math.max(linkTop - topPadding, 0), behavior: "auto" });
+          } else if (linkBottom > viewBottom) {
+            desktopToc.scrollTo({ top: linkBottom - desktopToc.clientHeight + bottomPadding, behavior: "auto" });
           }
         }
       }
