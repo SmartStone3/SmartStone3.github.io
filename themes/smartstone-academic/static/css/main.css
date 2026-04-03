@@ -548,7 +548,7 @@ a:hover {
 .article-layout {
   margin-top: 1.4rem;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 260px;
+  grid-template-columns: 260px minmax(0, 1fr);
   gap: 1.4rem;
 }
 
@@ -586,14 +586,16 @@ a:hover {
 
 .article-content {
   min-width: 0;
+  grid-column: 2;
 }
 
 .article-toc {
+  grid-column: 1;
   position: sticky;
   top: 98px;
   align-self: start;
-  border-left: 1px solid var(--line);
-  padding-left: 1rem;
+  border-right: 1px solid var(--line);
+  padding-right: 1rem;
   font-size: 0.9rem;
 }
 
