@@ -37,9 +37,6 @@
   {{ end }}
 
   <div class="article-layout">
-    <div class="article-content prose" id="article-content">
-      {{ .Content }}
-    </div>
     {{ if and $isPost .TableOfContents }}
     <aside class="article-toc">
       <div class="article-toc-head">
@@ -49,6 +46,9 @@
       {{ .TableOfContents }}
     </aside>
     {{ end }}
+    <div class="article-content prose" id="article-content">
+      {{ .Content }}
+    </div>
   </div>
 
   {{ if and $isPost site.Params.ShowPostNavLinks }}

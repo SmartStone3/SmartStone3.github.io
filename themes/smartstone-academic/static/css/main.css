@@ -586,11 +586,9 @@ a:hover {
 
 .article-content {
   min-width: 0;
-  grid-column: 2;
 }
 
 .article-toc {
-  grid-column: 1;
   position: sticky;
   top: 98px;
   align-self: start;
