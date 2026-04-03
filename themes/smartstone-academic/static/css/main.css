@@ -586,15 +586,31 @@ a:hover {
 
 .article-content {
   min-width: 0;
+  grid-column: 1;
 }
 
 .article-toc {
+  grid-column: 2;
   position: sticky;
   top: 98px;
   align-self: start;
-  border-right: 1px solid var(--line);
-  padding-right: 0.9rem;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  border-left: 1px solid var(--line);
+  padding-left: 0.9rem;
+  border-right: 0;
+  padding-right: 0;
   font-size: 0.9rem;
+}
+
+.article-toc::-webkit-scrollbar {
+  width: 6px;
+}
+
+.article-toc::-webkit-scrollbar-thumb {
+  background: #c6ccbf;
+  border-radius: 999px;
 }
 
 .article-toc-head {
@@ -621,6 +637,25 @@ a:hover {
   padding: 0.15rem 0.6rem;
   font-size: 0.72rem;
   cursor: pointer;
+}
+
+.page-top-fab {
+  position: fixed;
+  right: 1.3rem;
+  bottom: 1.2rem;
+  border: 1px solid #cfd6c7;
+  background: rgba(248, 248, 242, 0.94);
+  color: #31453a;
+  border-radius: 999px;
+  padding: 0.42rem 0.78rem;
+  font-size: 0.78rem;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(30, 35, 31, 0.13);
+  z-index: 41;
+}
+
+.page-top-fab:hover {
+  filter: brightness(0.98);
 }
 
 .toc-top-btn:hover {
@@ -1097,6 +1132,11 @@ body.lightbox-open {
 
   .article-toc-mobile {
     display: block;
+  }
+
+  .page-top-fab {
+    right: 0.9rem;
+    bottom: 0.9rem;
   }
 }
 

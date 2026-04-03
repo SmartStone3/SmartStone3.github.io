@@ -27,9 +27,6 @@
   {{ if and $isPost .TableOfContents }}
   <details class="article-toc-mobile">
     <summary>目录导航</summary>
-    <div class="article-toc-mobile-actions">
-      <button class="toc-top-btn" type="button" data-toc-top>回到顶部</button>
-    </div>
     <div class="article-toc-mobile-body">
       {{ .TableOfContents }}
     </div>
@@ -37,18 +34,17 @@
   {{ end }}
 
   <div class="article-layout">
+    <div class="article-content prose" id="article-content">
+      {{ .Content }}
+    </div>
     {{ if and $isPost .TableOfContents }}
     <aside class="article-toc">
       <div class="article-toc-head">
         <p>目录</p>
-        <button class="toc-top-btn" type="button" data-toc-top>回到顶部</button>
       </div>
       {{ .TableOfContents }}
     </aside>
     {{ end }}
-    <div class="article-content prose" id="article-content">
-      {{ .Content }}
-    </div>
   </div>
 
   {{ if and $isPost site.Params.ShowPostNavLinks }}
@@ -66,6 +62,10 @@
       {{ end }}
     </div>
   </nav>
+  {{ end }}
+
+  {{ if $isPost }}
+  <button class="page-top-fab" type="button" data-toc-top aria-label="回到顶部">回到顶部</button>
   {{ end }}
 </article>
 {{ end }}
