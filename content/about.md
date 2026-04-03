@@ -3,4 +3,4 @@ title: "关于"
 date: 2026-04-03T12:00:00+08:00
 ---
 
-你好，我是 SmartStone3。这里是我的个人技术博客，专注于 Unreal Engine、动画系统、工具链和开发笔记。
+你好，我是 SmartStone3。这里是我的个人技术博客，专注于 C++、Unreal Engine、动画系统、工具链和开发笔记。
