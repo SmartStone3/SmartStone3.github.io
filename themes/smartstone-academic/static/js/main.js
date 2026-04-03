@@ -459,13 +459,14 @@
     toc.addEventListener(
       "wheel",
       function (event) {
-        var atTop = toc.scrollTop <= 0;
-        var atBottom = toc.scrollTop + toc.clientHeight >= toc.scrollHeight - 1;
-        var up = event.deltaY < 0;
-        var down = event.deltaY > 0;
-        if ((up && atTop) || (down && atBottom)) {
-          event.preventDefault();
+        event.preventDefault();
+        var unit = 1;
+        if (event.deltaMode === 1) {
+          unit = 16;
+        } else if (event.deltaMode === 2) {
+          unit = toc.clientHeight;
         }
+        toc.scrollTop += event.deltaY * unit;
       },
       { passive: false }
     );
