@@ -113,8 +113,8 @@
     <h2>专题标签</h2>
   </div>
   <div class="taxonomy-cloud">
-    {{ range $name, $taxonomy := site.Taxonomies.tags }}
-    <a href="{{ (print "/tags/" ($name | urlize) "/") | relURL }}">{{ $name }} <span>{{ len $taxonomy }}</span></a>
+    {{ range site.Taxonomies.tags.ByCount }}
+    <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }} <span>{{ .Count }}</span></a>
     {{ end }}
   </div>
 </section>

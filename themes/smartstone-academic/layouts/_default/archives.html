@@ -5,7 +5,8 @@
 </section>
 
 <section class="container panel archive-list">
-  {{ range .Site.RegularPages.GroupByDate "2006" }}
+  {{ $posts := where .Site.RegularPages "Section" "posts" }}
+  {{ range $posts.GroupByDate "2006" }}
   <div class="archive-year">
     <h2>{{ .Key }}</h2>
     <ul>
