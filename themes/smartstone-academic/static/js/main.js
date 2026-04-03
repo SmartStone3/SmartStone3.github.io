@@ -56,6 +56,7 @@
     }
 
     var sectionProgressBar = document.getElementById("section-progress-bar");
+    var desktopToc = document.querySelector(".article-toc");
     var headingOrder = [];
     var activeId = null;
 
@@ -98,6 +99,26 @@
         });
       }
       updateSectionProgress(id);
+      if (desktopToc && linkMap[id]) {
+        var targetLink = null;
+        for (var i = 0; i < linkMap[id].length; i += 1) {
+          if (linkMap[id][i].closest(".article-toc")) {
+            targetLink = linkMap[id][i];
+            break;
+          }
+        }
+        if (targetLink) {
+          var tocRect = desktopToc.getBoundingClientRect();
+          var linkRect = targetLink.getBoundingClientRect();
+          var topPadding = 42;
+          var bottomPadding = 18;
+          if (linkRect.top < tocRect.top + topPadding) {
+            desktopToc.scrollTop -= (tocRect.top + topPadding - linkRect.top);
+          } else if (linkRect.bottom > tocRect.bottom - bottomPadding) {
+            desktopToc.scrollTop += (linkRect.bottom - (tocRect.bottom - bottomPadding));
+          }
+        }
+      }
     };
 
     var scrollToHeading = function (id) {
