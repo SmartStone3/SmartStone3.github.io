@@ -1,6 +1,6 @@
 ---
 title: "使用 std::variant 实现有限状态机"
-date: 2026-04-04T10:00:00+08:00
+date: 2026-04-03T10:00:00+08:00
 draft: false
 slug: "variant-fsm-cpp17"
 tags: ["C++", "std::variant", "有限状态机", "C++17"]
