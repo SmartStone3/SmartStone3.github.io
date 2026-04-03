@@ -550,6 +550,7 @@ a:hover {
   display: grid;
   grid-template-columns: 240px minmax(0, 1fr);
   gap: 1.2rem;
+  align-items: start;
 }
 
 .article-toc-mobile {
@@ -586,28 +587,31 @@ a:hover {
 
 .article-content {
   min-width: 0;
-  grid-column: 1;
+  grid-column: 2;
+  max-height: calc(100vh - 230px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  padding-right: 0.35rem;
 }
 
 .article-toc {
-  grid-column: 2;
-  position: sticky;
-  top: 98px;
-  align-self: start;
-  max-height: calc(100vh - 120px);
+  grid-column: 1;
+  max-height: calc(100vh - 230px);
   overflow-y: auto;
   scrollbar-width: thin;
-  border-left: 1px solid var(--line);
-  padding-left: 0.9rem;
-  border-right: 0;
-  padding-right: 0;
+  border-right: 1px solid var(--line);
+  padding-right: 0.9rem;
+  border-left: 0;
+  padding-left: 0;
   font-size: 0.9rem;
 }
 
+.article-content::-webkit-scrollbar,
 .article-toc::-webkit-scrollbar {
   width: 6px;
 }
 
+.article-content::-webkit-scrollbar-thumb,
 .article-toc::-webkit-scrollbar-thumb {
   background: #c6ccbf;
   border-radius: 999px;
@@ -1126,8 +1130,20 @@ body.lightbox-open {
     grid-template-columns: minmax(0, 1fr);
   }
 
+  .article-content {
+    grid-column: auto;
+    max-height: none;
+    overflow: visible;
+    padding-right: 0;
+  }
+
   .article-toc {
+    grid-column: auto;
     display: none;
+    max-height: none;
+    overflow: visible;
+    border-right: 0;
+    padding-right: 0;
   }
 
   .article-toc-mobile {
