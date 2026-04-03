@@ -1,0 +1,24 @@
+{{ define "main" }}
+<section class="container page-head">
+  <p class="hero-kicker">列表</p>
+  <h1>{{ .Title }}</h1>
+  {{ with .Content }}<div class="page-intro">{{ . }}</div>{{ end }}
+</section>
+
+<section class="container panel">
+  {{ $paginator := .Paginate .Pages }}
+  <div class="post-grid">
+    {{ range $paginator.Pages }}
+      {{ partial "post-card.html" . }}
+    {{ end }}
+  </div>
+
+  {{ if gt $paginator.TotalPages 1 }}
+  <nav class="pager" aria-label="分页">
+    {{ if $paginator.HasPrev }}<a href="{{ $paginator.Prev.URL }}">上一页</a>{{ end }}
+    <span>第 {{ $paginator.PageNumber }} / {{ $paginator.TotalPages }} 页</span>
+    {{ if $paginator.HasNext }}<a href="{{ $paginator.Next.URL }}">下一页</a>{{ end }}
+  </nav>
+  {{ end }}
+</section>
+{{ end }}

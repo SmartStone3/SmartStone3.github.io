@@ -1,0 +1,121 @@
+{{ define "bodyClass" }}home{{ end }}
+{{ define "main" }}
+{{ $posts := where site.RegularPages "Section" "posts" }}
+{{ $sortedPosts := $posts.ByDate.Reverse }}
+{{ $featured := where $posts "Params.featured" true }}
+{{ $latest := first 6 $sortedPosts }}
+
+<section class="hero container">
+  <div class="hero-grid">
+    <div class="hero-main">
+      <p class="hero-kicker">技术研究笔记</p>
+      <h1>{{ site.Title }}</h1>
+      <p class="hero-text">{{ site.Params.description }}</p>
+      <div class="hero-actions">
+        <a class="btn" href="{{ "posts/" | relURL }}">阅读文章</a>
+        <a class="btn btn-ghost" href="{{ "about/" | relURL }}">关于作者</a>
+      </div>
+
+      <div class="hero-topics">
+        <p>专题入口</p>
+        <div class="hero-topic-list">
+          {{ range first 4 site.Taxonomies.tags.ByCount }}
+          <a href="{{ .Page.RelPermalink }}">
+            <span>{{ .Page.Title }}</span>
+            <strong>{{ .Count }}</strong>
+          </a>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+
+    <aside class="hero-side" aria-label="站点统计">
+      <div class="stat-card">
+        <p>文章总数</p>
+        <strong>{{ len $posts }}</strong>
+      </div>
+      <div class="stat-card">
+        <p>标签专题</p>
+        <strong>{{ len site.Taxonomies.tags }}</strong>
+      </div>
+      <div class="stat-card">
+        <p>最近更新</p>
+        {{ $latestPost := first 1 $sortedPosts }}
+        {{ if gt (len $latestPost) 0 }}
+        <strong>{{ (index $latestPost 0).Date.Format "2006-01-02" }}</strong>
+        {{ else }}
+        <strong>暂无</strong>
+        {{ end }}
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="container panel updates-panel">
+  <div class="panel-head">
+    <h2>近期更新</h2>
+    <a href="{{ "archives/" | relURL }}">完整时间轴</a>
+  </div>
+  <div class="updates-list">
+    {{ range first 3 $sortedPosts }}
+    <a class="update-item" href="{{ .RelPermalink }}">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+      <span>{{ .Title }}</span>
+    </a>
+    {{ end }}
+  </div>
+</section>
+
+<section class="container panel author-panel">
+  <div class="panel-head">
+    <h2>作者</h2>
+  </div>
+  <div class="author-card">
+    <div class="author-avatar" aria-hidden="true">S3</div>
+    <div>
+      <p class="author-name">{{ site.Params.author.name | default "SmartStone3" }}</p>
+      <p class="author-role">{{ site.Params.author.role }}</p>
+      <p class="author-bio">{{ site.Params.author.bio }}</p>
+      {{ with site.Params.author.github }}
+      <a class="author-link" href="{{ . }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ if gt (len $featured) 0 }}
+<section class="container panel">
+  <div class="panel-head">
+    <h2>精选文章</h2>
+  </div>
+  <div class="post-grid featured-grid">
+    {{ range first 2 $featured }}
+      {{ partial "post-card.html" . }}
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+<section class="container panel">
+  <div class="panel-head">
+    <h2>最新文章</h2>
+    <a href="{{ "archives/" | relURL }}">查看归档</a>
+  </div>
+  <div class="post-grid">
+    {{ range $latest }}
+      {{ partial "post-card.html" . }}
+    {{ end }}
+  </div>
+</section>
+
+<section class="container panel">
+  <div class="panel-head">
+    <h2>专题标签</h2>
+  </div>
+  <div class="taxonomy-cloud">
+    {{ range $name, $taxonomy := site.Taxonomies.tags }}
+    <a href="{{ (print "/tags/" ($name | urlize) "/") | relURL }}">{{ $name }} <span>{{ len $taxonomy }}</span></a>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

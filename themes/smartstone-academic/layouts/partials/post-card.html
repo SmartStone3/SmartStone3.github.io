@@ -1,0 +1,22 @@
+<article class="post-card">
+  <header class="post-card-header">
+    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    <div class="post-meta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+      {{ if site.Params.ShowReadingTime }}
+      <span>{{ .ReadingTime }} 分钟阅读</span>
+      {{ end }}
+    </div>
+  </header>
+  <p>{{ .Summary | plainify | truncate 145 }}</p>
+  {{ if .Params.featured }}
+  <p class="post-flag">精选</p>
+  {{ end }}
+  {{ with .Params.tags }}
+  <ul class="tag-row">
+    {{ range first 3 . }}
+    <li>{{ . }}</li>
+    {{ end }}
+  </ul>
+  {{ end }}
+</article>

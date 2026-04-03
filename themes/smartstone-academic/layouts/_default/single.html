@@ -1,0 +1,68 @@
+{{ define "bodyClass" }}single{{ end }}
+{{ define "main" }}
+<article class="container article-wrap">
+  <header class="article-head">
+    <p class="hero-kicker">技术文章</p>
+    <h1>{{ .Title }}</h1>
+    <div class="post-meta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+      {{ if site.Params.ShowReadingTime }}<span>{{ .ReadingTime }} 分钟阅读</span>{{ end }}
+    </div>
+    {{ with .Params.tags }}
+    <ul class="tag-row">
+      {{ range . }}
+      <li><a href="{{ (print "/tags/" (. | urlize) "/") | relURL }}">{{ . }}</a></li>
+      {{ end }}
+    </ul>
+    {{ end }}
+  </header>
+
+  <div class="section-progress" aria-hidden="true">
+    <span class="section-progress-bar" id="section-progress-bar"></span>
+  </div>
+
+  {{ if .TableOfContents }}
+  <details class="article-toc-mobile">
+    <summary>目录导航</summary>
+    <div class="article-toc-mobile-actions">
+      <button class="toc-top-btn" type="button" data-toc-top>回到顶部</button>
+    </div>
+    <div class="article-toc-mobile-body">
+      {{ .TableOfContents }}
+    </div>
+  </details>
+  {{ end }}
+
+  <div class="article-layout">
+    <div class="article-content prose" id="article-content">
+      {{ .Content }}
+    </div>
+    {{ if .TableOfContents }}
+    <aside class="article-toc">
+      <div class="article-toc-head">
+        <p>目录</p>
+        <button class="toc-top-btn" type="button" data-toc-top>回到顶部</button>
+      </div>
+      {{ .TableOfContents }}
+    </aside>
+    {{ end }}
+  </div>
+
+  {{ if site.Params.ShowPostNavLinks }}
+  <nav class="post-nav" aria-label="文章导航">
+    <div class="post-nav-item prev">
+      {{ with .PrevInSection }}
+      <span>上一篇</span>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      {{ end }}
+    </div>
+    <div class="post-nav-item next">
+      {{ with .NextInSection }}
+      <span>下一篇</span>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      {{ end }}
+    </div>
+  </nav>
+  {{ end }}
+</article>
+{{ end }}

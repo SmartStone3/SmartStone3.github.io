@@ -1,7 +1,7 @@
 baseURL = 'https://smartstone3.github.io/'
 languageCode = 'zh-cn'
 title = 'SmartStone Blog'
-theme = 'PaperMod'
+theme = 'smartstone-academic'
 pagination.pagerSize = 10
 
 [taxonomies]
@@ -16,6 +16,12 @@ pagination.pagerSize = 10
   ShowCodeCopyButtons = true
   defaultTheme = 'auto'
   disableThemeToggle = false
+
+[params.author]
+  name = 'SmartStone3'
+  role = 'Unreal Engine / 动画系统开发者'
+  bio = '关注 UE 动画系统、IK 工作流、工具链与工程实践，持续输出可复用的技术笔记。'
+  github = 'https://github.com/SmartStone3'
 
 [params.homeInfoParams]
   Title = '欢迎来到 SmartStone Blog'

@@ -1,0 +1,11 @@
+name = "SmartStone Academic"
+license = "MIT"
+licenselink = "https://opensource.org/licenses/MIT"
+description = "Academic minimalist theme for technical blogs"
+homepage = "https://smartstone3.github.io/"
+tags = ["blog", "minimal", "academic", "technical", "responsive"]
+features = ["responsive", "toc", "tags", "archives"]
+min_version = "0.120.0"
+
+[author]
+  name = "SmartStone3"

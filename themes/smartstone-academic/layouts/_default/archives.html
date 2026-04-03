@@ -1,0 +1,22 @@
+{{ define "main" }}
+<section class="container page-head">
+  <p class="hero-kicker">时间轴</p>
+  <h1>{{ .Title }}</h1>
+</section>
+
+<section class="container panel archive-list">
+  {{ range .Site.RegularPages.GroupByDate "2006" }}
+  <div class="archive-year">
+    <h2>{{ .Key }}</h2>
+    <ul>
+      {{ range .Pages }}
+      <li>
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "01-02" }}</time>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+</section>
+{{ end }}
