@@ -598,6 +598,7 @@ a:hover {
   align-self: start;
   max-height: calc(100vh - 118px);
   overflow-y: auto;
+  overscroll-behavior: contain;
   -ms-overflow-style: none;
   scrollbar-width: none;
   border-right: 1px solid var(--line);

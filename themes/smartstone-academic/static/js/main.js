@@ -451,8 +451,29 @@
     });
   };
 
+  var setupTocWheelIsolation = function () {
+    var toc = document.querySelector(".article-toc");
+    if (!toc) {
+      return;
+    }
+    toc.addEventListener(
+      "wheel",
+      function (event) {
+        var atTop = toc.scrollTop <= 0;
+        var atBottom = toc.scrollTop + toc.clientHeight >= toc.scrollHeight - 1;
+        var up = event.deltaY < 0;
+        var down = event.deltaY > 0;
+        if ((up && atTop) || (down && atBottom)) {
+          event.preventDefault();
+        }
+      },
+      { passive: false }
+    );
+  };
+
   setupTocHighlight();
   setupImageLightbox();
   setupCodeBlocks();
   setupTocTopButton();
+  setupTocWheelIsolation();
 })();
