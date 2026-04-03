@@ -549,6 +549,7 @@ a:hover {
   margin-top: 1.4rem;
   display: grid;
   grid-template-columns: 240px minmax(0, 1fr);
+  grid-template-areas: "toc content";
   gap: 1.2rem;
   align-items: start;
 }
@@ -587,7 +588,7 @@ a:hover {
 
 .article-content {
   min-width: 0;
-  grid-column: 2;
+  grid-area: content;
   max-height: calc(100vh - 230px);
   overflow-y: auto;
   scrollbar-width: thin;
@@ -595,7 +596,7 @@ a:hover {
 }
 
 .article-toc {
-  grid-column: 1;
+  grid-area: toc;
   max-height: calc(100vh - 230px);
   overflow-y: auto;
   scrollbar-width: thin;
@@ -1128,17 +1129,16 @@ body.lightbox-open {
 
   .article-layout {
     grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "content";
   }
 
   .article-content {
-    grid-column: auto;
     max-height: none;
     overflow: visible;
     padding-right: 0;
   }
 
   .article-toc {
-    grid-column: auto;
     display: none;
     max-height: none;
     overflow: visible;
