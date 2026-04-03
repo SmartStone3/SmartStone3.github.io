@@ -593,6 +593,9 @@ a:hover {
 
 .article-toc {
   grid-area: toc;
+  position: sticky;
+  top: 98px;
+  align-self: start;
   border-right: 1px solid var(--line);
   padding-right: 0.9rem;
   border-left: 0;
