@@ -2,7 +2,7 @@
 title: "IKRig的应用价值 - 详细笔记（精简版）"
 date: 2026-04-03T21:00:00+08:00
 draft: false
-slug: "ikrig应用价值-详细笔记"
+slug: "IK Rig应用价值"
 tags: ["Unreal Engine", "IKRig", "动画"]
 ---
 
