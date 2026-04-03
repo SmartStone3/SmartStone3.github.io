@@ -60,6 +60,16 @@
     var headingOrder = [];
     var activeId = null;
 
+    var getOffsetWithin = function (node, container) {
+      var top = 0;
+      var current = node;
+      while (current && current !== container) {
+        top += current.offsetTop;
+        current = current.offsetParent;
+      }
+      return top;
+    };
+
     var linkMap = {};
     allLinks.forEach(function (link) {
       var href = link.getAttribute("href") || "";
@@ -113,16 +123,14 @@
         if (targetLink) {
           var topPadding = 42;
           var bottomPadding = 18;
-          var tocRect = desktopToc.getBoundingClientRect();
-          var linkRect = targetLink.getBoundingClientRect();
-          var linkTop = linkRect.top - tocRect.top + desktopToc.scrollTop;
-          var linkBottom = linkTop + linkRect.height;
+          var linkTop = getOffsetWithin(targetLink, desktopToc);
+          var linkBottom = linkTop + targetLink.offsetHeight;
           var viewTop = desktopToc.scrollTop + topPadding;
           var viewBottom = desktopToc.scrollTop + desktopToc.clientHeight - bottomPadding;
           if (linkTop < viewTop) {
-            desktopToc.scrollTo({ top: Math.max(linkTop - topPadding, 0), behavior: "auto" });
+            desktopToc.scrollTop = Math.max(linkTop - topPadding, 0);
           } else if (linkBottom > viewBottom) {
-            desktopToc.scrollTo({ top: linkBottom - desktopToc.clientHeight + bottomPadding, behavior: "auto" });
+            desktopToc.scrollTop = linkBottom - desktopToc.clientHeight + bottomPadding;
           }
         }
       }
