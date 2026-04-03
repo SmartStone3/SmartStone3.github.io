@@ -8,7 +8,7 @@ pagination.pagerSize = 10
   tag = 'tags'
 
 [params]
-  description = '记录 Unreal Engine、C++、动画系统与技术开发笔记。'
+  description = '记录 C++、Unreal Engine、动画系统与技术开发笔记。'
   ShowReadingTime = true
   ShowShareButtons = false
   ShowPostNavLinks = true
