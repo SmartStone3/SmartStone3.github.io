@@ -4,12 +4,6 @@
 
 线上地址：<https://smartstone3.github.io/>
 
-## 封面预览
-
-![SmartStone Blog Cover](static/images/ikrig/note_02_solver_stack.jpg)
-
-> 主题方向：UE 动画系统、IK Rig、C++ 工程实践与技术笔记。
-
 ## 文章示例
 
 - [《IKRig的应用价值》](content/posts/ikrig-application-value.md)
