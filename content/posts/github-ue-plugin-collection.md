@@ -9,7 +9,7 @@ featured: true
 
 # GitHub上的UE插件收藏整理
 
-> 本文整理自 GitHub 用户 [Lim-Young (LimYoung)](https://github.com/Lim-Young) 的全部 13 个 Star Lists（共 532 个仓库），涵盖 Unreal Plugin、Unreal Basic Plugins、Unreal Doc、AI、Pipeline、Blender、Doc、Net、Assets、Python、Unity、Godot、Wwise 等分类，按功能领域进行介绍。
+> 本文整理自 GitHub 仓库，涵盖 Unreal Plugin、Unreal Basic Plugins、Unreal Doc、AI、Pipeline、Blender、Doc、Net、Assets、Python、Unity、Godot、Wwise 等分类，按功能领域进行介绍。
 
 ---
 
@@ -684,4 +684,4 @@ featured: true
 
 ---
 
-> 📌 **注：** 本文整理自用户 [Lim-Young](https://github.com/Lim-Young) 在 GitHub 上的全部 13 个 Star Lists（共 532 个仓库），涵盖 Unreal Plugin、Unreal Basic Plugins、Unreal Doc、AI、Pipeline、Blender、Doc、Net、Assets、Python、Unity、Godot、Wwise 等分类。Stars 数量截至 2026 年 3 月，部分仓库 Stars 数量标记为 "—" 表示该仓库 Star 数未获取到或为大型仓库（超过 1000 Stars）。由于 GitHub 页面渲染限制，本文可能未覆盖全部仓库，但已尽力包含绝大多数收藏项目。
+> 📌 **注：** 本文整理 GitHub 上的仓库，涵盖 Unreal Plugin、Unreal Basic Plugins、Unreal Doc、AI、Pipeline、Blender、Doc、Net、Assets、Python、Unity、Godot、Wwise 等分类。Stars 数量截至 2026 年 3 月，部分仓库 Stars 数量标记为 "—" 表示该仓库 Star 数未获取到或为大型仓库（超过 1000 Stars）。由于 GitHub 页面渲染限制，本文可能未覆盖全部仓库，但已尽力包含绝大多数收藏项目。
