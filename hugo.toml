@@ -30,6 +30,12 @@ pagination.pagerSize = 10
 [outputs]
   home = ['HTML', 'RSS', 'JSON']
 
+[markup]
+  [markup.highlight]
+    noClasses = false
+    lineNos = false
+    style = 'monokai'
+
 [[menu.main]]
   identifier = 'home'
   name = '首页'
