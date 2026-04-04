@@ -944,60 +944,98 @@ html.show-line-numbers .prose pre.code-lines-ready .code-line-gutter {
   padding: 0;
 }
 
+.prose .chroma,
+.prose .chroma .line,
+.prose .chroma .cl {
+  color: var(--code-ink);
+}
+
 .prose pre code .k,
+.prose .chroma .k,
 .prose pre code .kn,
+.prose .chroma .kn,
 .prose pre code .kp,
+.prose .chroma .kp,
 .prose pre code .kr,
-.prose pre code .kt {
+.prose .chroma .kr,
+.prose pre code .kt,
+.prose .chroma .kt {
   color: #c586c0;
 }
 
 .prose pre code .nf,
+.prose .chroma .nf,
 .prose pre code .fm,
-.prose pre code .nc {
+.prose .chroma .fm,
+.prose pre code .nc,
+.prose .chroma .nc {
   color: #dcdcaa;
 }
 
 .prose pre code .nb,
+.prose .chroma .nb,
 .prose pre code .nx,
-.prose pre code .n {
+.prose .chroma .nx,
+.prose pre code .n,
+.prose .chroma .n {
   color: #9cdcfe;
 }
 
 .prose pre code .s,
+.prose .chroma .s,
 .prose pre code .s1,
+.prose .chroma .s1,
 .prose pre code .s2,
+.prose .chroma .s2,
 .prose pre code .sb,
+.prose .chroma .sb,
 .prose pre code .sc,
+.prose .chroma .sc,
 .prose pre code .se,
-.prose pre code .sr {
+.prose .chroma .se,
+.prose pre code .sr,
+.prose .chroma .sr {
   color: #ce9178;
 }
 
 .prose pre code .m,
+.prose .chroma .m,
 .prose pre code .mi,
+.prose .chroma .mi,
 .prose pre code .mf,
+.prose .chroma .mf,
 .prose pre code .mh,
-.prose pre code .mo {
+.prose .chroma .mh,
+.prose pre code .mo,
+.prose .chroma .mo {
   color: #b5cea8;
 }
 
 .prose pre code .c,
+.prose .chroma .c,
 .prose pre code .c1,
+.prose .chroma .c1,
 .prose pre code .cm,
+.prose .chroma .cm,
 .prose pre code .cp,
+.prose .chroma .cp,
 .prose pre code .cs,
-.prose pre code .cpf {
+.prose .chroma .cs,
+.prose pre code .cpf,
+.prose .chroma .cpf {
   color: #6a9955;
   font-style: italic;
 }
 
 .prose pre code .o,
-.prose pre code .p {
+.prose .chroma .o,
+.prose pre code .p,
+.prose .chroma .p {
   color: #d4d4d4;
 }
 
-.prose pre code .err {
+.prose pre code .err,
+.prose .chroma .err {
   color: #f44747;
 }
 
