@@ -246,9 +246,11 @@
           return;
         }
 
-        token.classList.remove("tok-type", "tok-var", "tok-call", "tok-enum-value");
+        token.classList.remove("tok-type", "tok-var", "tok-call", "tok-enum-value", "tok-macro");
 
-        if (/^[A-Z_]/.test(text)) {
+        if (/^[A-Z0-9_]+$/.test(text) && text.indexOf("_") !== -1) {
+          token.classList.add("tok-macro");
+        } else if (/^[A-Z]/.test(text)) {
           token.classList.add("tok-type");
         } else {
           token.classList.add("tok-var");

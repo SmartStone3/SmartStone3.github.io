@@ -970,7 +970,7 @@ html.show-line-numbers .prose pre.code-lines-ready .code-line-gutter {
 .prose .chroma .nf,
 .prose pre code .fm,
 .prose .chroma .fm {
-  color: #ff9a1f;
+  color: #ff9d00;
 }
 
 .prose pre code .nc,
@@ -984,7 +984,7 @@ html.show-line-numbers .prose pre.code-lines-ready .code-line-gutter {
 .prose .chroma .nx,
 .prose pre code .n,
 .prose .chroma .n {
-  color: #d8c9a6;
+  color: #d7ba7d;
 }
 
 .prose pre code .n.tok-type,
@@ -994,7 +994,7 @@ html.show-line-numbers .prose pre.code-lines-ready .code-line-gutter {
 
 .prose pre code .n.tok-var,
 .prose .chroma .n.tok-var {
-  color: #ceb48c;
+  color: #d7ba7d;
 }
 
 .prose pre code .n.tok-call,
@@ -1005,6 +1005,11 @@ html.show-line-numbers .prose pre.code-lines-ready .code-line-gutter {
 .prose pre code .n.tok-enum-value,
 .prose .chroma .n.tok-enum-value {
   color: #ff9d00;
+}
+
+.prose pre code .n.tok-macro,
+.prose .chroma .n.tok-macro {
+  color: #d16dff;
 }
 
 .prose pre code .s,
@@ -1021,7 +1026,7 @@ html.show-line-numbers .prose pre.code-lines-ready .code-line-gutter {
 .prose .chroma .se,
 .prose pre code .sr,
 .prose .chroma .sr {
-  color: #efb08a;
+  color: #ce9178;
 }
 
 .prose pre code .m,
@@ -1034,7 +1039,7 @@ html.show-line-numbers .prose pre.code-lines-ready .code-line-gutter {
 .prose .chroma .mh,
 .prose pre code .mo,
 .prose .chroma .mo {
-  color: #e6cf68;
+  color: #b5cea8;
 }
 
 .prose pre code .c,
@@ -1049,7 +1054,7 @@ html.show-line-numbers .prose pre.code-lines-ready .code-line-gutter {
 .prose .chroma .cs,
 .prose pre code .cpf,
 .prose .chroma .cpf {
-  color: #55b848;
+  color: #6a9955;
   font-style: italic;
 }
 
@@ -1057,7 +1062,7 @@ html.show-line-numbers .prose pre.code-lines-ready .code-line-gutter {
 .prose .chroma .o,
 .prose pre code .p,
 .prose .chroma .p {
-  color: #c4c4c4;
+  color: #d4d4d4;
 }
 
 .prose pre code .nd,
@@ -1066,14 +1071,14 @@ html.show-line-numbers .prose pre.code-lines-ready .code-line-gutter {
 .prose .chroma .ne,
 .prose pre code .no,
 .prose .chroma .no {
-  color: #d67cff;
+  color: #c586c0;
 }
 
 .prose pre code .nn,
 .prose .chroma .nn,
 .prose pre code .nl,
 .prose .chroma .nl {
-  color: #5cb7ff;
+  color: #4fc1ff;
 }
 
 .prose pre code .err,
