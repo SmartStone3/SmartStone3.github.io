@@ -987,6 +987,11 @@ html.show-line-numbers .prose pre.code-lines-ready .code-line-gutter {
   color: #ceb48c;
 }
 
+.prose pre code .n + .n,
+.prose .chroma .n + .n {
+  color: #9cdcfe;
+}
+
 .prose pre code .s,
 .prose .chroma .s,
 .prose pre code .s1,
