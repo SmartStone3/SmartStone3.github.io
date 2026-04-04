@@ -81,6 +81,32 @@ hugo --gc --minify
   - 执行 `hugo --gc --minify`
   - 部署到 GitHub Pages
 
+## 在线可视化编辑（Decap CMS）
+
+项目已接入 Decap CMS，入口地址：`/admin/`
+
+- 线上访问：<https://smartstone3.github.io/admin/>
+- 配置文件：`static/admin/config.yml`
+- 管理页入口：`static/admin/index.html`
+
+### 首次启用（必须完成）
+
+当前配置使用 `github` backend，需要一个 OAuth 中转服务来完成 GitHub 登录。
+
+1. 部署官方 OAuth 服务（推荐 Render 一键部署）：
+   - 文档：<https://decapcms.org/docs/github-backend/>
+   - 部署后会得到一个服务地址，例如：
+     `https://smartstone3-github-oauth.onrender.com`
+2. 在 GitHub 新建 OAuth App：
+   - Homepage URL：`https://smartstone3.github.io`
+   - Authorization callback URL：`https://<你的-oauth-服务域名>/callback`
+3. 将 OAuth App 的 `Client ID` / `Client Secret` 配置到 OAuth 服务环境变量。
+4. 把 `static/admin/config.yml` 中这两项替换成你的真实地址：
+   - `base_url`
+   - `auth_endpoint`（通常保持 `auth`）
+
+完成后，访问 `/admin/` 即可在线创建和编辑 `content/posts` 下的文章，并上传图片到 `static/images/uploads`。
+
 ## 配置说明
 
 主要配置文件：`hugo.toml`

@@ -1,0 +1,32 @@
+backend:
+  name: github
+  repo: SmartStone3/SmartStone3.github.io
+  branch: main
+  base_url: https://smartstone3-github-oauth.onrender.com
+  auth_endpoint: auth
+
+media_folder: static/images/uploads
+public_folder: /images/uploads
+
+locale: zh_Hans
+
+site_url: https://smartstone3.github.io
+display_url: https://smartstone3.github.io
+logo_url: /images/favicon.ico
+
+collections:
+  - name: posts
+    label: 文章
+    label_singular: 文章
+    folder: content/posts
+    create: true
+    slug: "{{slug}}"
+    preview_path: "posts/{{slug}}"
+    fields:
+      - { label: 标题, name: title, widget: string }
+      - { label: 发布时间, name: date, widget: datetime, format: "YYYY-MM-DDTHH:mm:ssZ" }
+      - { label: 草稿, name: draft, widget: boolean, default: true }
+      - { label: Slug, name: slug, widget: string }
+      - { label: 标签, name: tags, widget: list, required: false }
+      - { label: 置顶推荐, name: featured, widget: boolean, default: false, required: false }
+      - { label: 正文, name: body, widget: markdown }
