@@ -238,6 +238,29 @@
       return lang;
     };
 
+    var classifyCppTokens = function (code) {
+      var names = code.querySelectorAll("span.n");
+      names.forEach(function (token) {
+        var text = (token.textContent || "").trim();
+        if (!text) {
+          return;
+        }
+
+        token.classList.remove("tok-type", "tok-var", "tok-call");
+
+        if (/^[A-Z_]/.test(text)) {
+          token.classList.add("tok-type");
+        } else {
+          token.classList.add("tok-var");
+        }
+
+        var next = token.nextElementSibling;
+        if (next && next.classList.contains("p") && (next.textContent || "").trim().charAt(0) === "(") {
+          token.classList.add("tok-call");
+        }
+      });
+    };
+
     var buildLineNumbers = function (code) {
       var raw = (code.textContent || "").replace(/\n$/, "");
       var lineCount = raw ? raw.split("\n").length : 1;
@@ -284,6 +307,9 @@
       toolbar.className = "code-toolbar";
 
       var langName = detectLanguage(code);
+      if (langName === "cpp" || langName === "c++") {
+        classifyCppTokens(code);
+      }
       var lang = document.createElement("span");
       lang.className = "code-lang";
       lang.classList.add("code-lang-" + langName.replace(/[^a-z0-9_-]+/g, "-"));

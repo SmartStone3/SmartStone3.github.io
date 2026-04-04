@@ -987,9 +987,19 @@ html.show-line-numbers .prose pre.code-lines-ready .code-line-gutter {
   color: #ceb48c;
 }
 
-.prose pre code .n + .n,
-.prose .chroma .n + .n {
+.prose pre code .n.tok-type,
+.prose .chroma .n.tok-type {
   color: #9cdcfe;
+}
+
+.prose pre code .n.tok-var,
+.prose .chroma .n.tok-var {
+  color: #ceb48c;
+}
+
+.prose pre code .n.tok-call,
+.prose .chroma .n.tok-call {
+  color: #ff9d00;
 }
 
 .prose pre code .s,
