@@ -969,10 +969,13 @@ html.show-line-numbers .prose pre.code-lines-ready .code-line-gutter {
 .prose pre code .nf,
 .prose .chroma .nf,
 .prose pre code .fm,
-.prose .chroma .fm,
+.prose .chroma .fm {
+  color: #ff9d00;
+}
+
 .prose pre code .nc,
 .prose .chroma .nc {
-  color: #ff9d00;
+  color: #ffd95e;
 }
 
 .prose pre code .nb,
