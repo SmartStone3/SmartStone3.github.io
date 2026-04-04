@@ -958,12 +958,12 @@ html.show-line-numbers .prose pre.code-lines-ready .code-line-gutter {
 .prose .chroma .kp,
 .prose pre code .kr,
 .prose .chroma .kr {
-  color: #59c2ff;
+  color: #4fb6ff;
 }
 
 .prose pre code .kt,
 .prose .chroma .kt {
-  color: #ffd35f;
+  color: #ffd861;
 }
 
 .prose pre code .nf,
@@ -975,7 +975,7 @@ html.show-line-numbers .prose pre.code-lines-ready .code-line-gutter {
 
 .prose pre code .nc,
 .prose .chroma .nc {
-  color: #ffea80;
+  color: #ffe36b;
 }
 
 .prose pre code .nb,
@@ -984,12 +984,12 @@ html.show-line-numbers .prose pre.code-lines-ready .code-line-gutter {
 .prose .chroma .nx,
 .prose pre code .n,
 .prose .chroma .n {
-  color: #ceb48c;
+  color: #d8c9a6;
 }
 
 .prose pre code .n.tok-type,
 .prose .chroma .n.tok-type {
-  color: #9cdcfe;
+  color: #ffe36b;
 }
 
 .prose pre code .n.tok-var,
@@ -1016,7 +1016,7 @@ html.show-line-numbers .prose pre.code-lines-ready .code-line-gutter {
 .prose .chroma .se,
 .prose pre code .sr,
 .prose .chroma .sr {
-  color: #f1b287;
+  color: #efb08a;
 }
 
 .prose pre code .m,
@@ -1029,7 +1029,7 @@ html.show-line-numbers .prose pre.code-lines-ready .code-line-gutter {
 .prose .chroma .mh,
 .prose pre code .mo,
 .prose .chroma .mo {
-  color: #b7e08a;
+  color: #e6cf68;
 }
 
 .prose pre code .c,
@@ -1044,7 +1044,7 @@ html.show-line-numbers .prose pre.code-lines-ready .code-line-gutter {
 .prose .chroma .cs,
 .prose pre code .cpf,
 .prose .chroma .cpf {
-  color: #71b36d;
+  color: #55b848;
   font-style: italic;
 }
 
@@ -1057,15 +1057,18 @@ html.show-line-numbers .prose pre.code-lines-ready .code-line-gutter {
 
 .prose pre code .nd,
 .prose .chroma .nd,
-.prose pre code .nn,
-.prose .chroma .nn,
 .prose pre code .ne,
 .prose .chroma .ne,
-.prose pre code .nl,
-.prose .chroma .nl,
 .prose pre code .no,
 .prose .chroma .no {
-  color: #d49bff;
+  color: #d67cff;
+}
+
+.prose pre code .nn,
+.prose .chroma .nn,
+.prose pre code .nl,
+.prose .chroma .nl {
+  color: #5cb7ff;
 }
 
 .prose pre code .err,
