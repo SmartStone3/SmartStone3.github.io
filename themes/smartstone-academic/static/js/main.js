@@ -246,12 +246,17 @@
           return;
         }
 
-        token.classList.remove("tok-type", "tok-var", "tok-call");
+        token.classList.remove("tok-type", "tok-var", "tok-call", "tok-enum-value");
 
         if (/^[A-Z_]/.test(text)) {
           token.classList.add("tok-type");
         } else {
           token.classList.add("tok-var");
+        }
+
+        var prev = token.previousElementSibling;
+        if (prev && prev.classList.contains("o") && (prev.textContent || "").indexOf("::") !== -1) {
+          token.classList.add("tok-enum-value");
         }
 
         var next = token.nextElementSibling;

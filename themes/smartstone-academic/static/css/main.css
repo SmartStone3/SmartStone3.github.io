@@ -1002,6 +1002,11 @@ html.show-line-numbers .prose pre.code-lines-ready .code-line-gutter {
   color: #ff9d00;
 }
 
+.prose pre code .n.tok-enum-value,
+.prose .chroma .n.tok-enum-value {
+  color: #ff9d00;
+}
+
 .prose pre code .s,
 .prose .chroma .s,
 .prose pre code .s1,
