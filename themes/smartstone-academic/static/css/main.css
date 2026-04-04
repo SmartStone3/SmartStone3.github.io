@@ -957,10 +957,13 @@ html.show-line-numbers .prose pre.code-lines-ready .code-line-gutter {
 .prose pre code .kp,
 .prose .chroma .kp,
 .prose pre code .kr,
-.prose .chroma .kr,
+.prose .chroma .kr {
+  color: #569cd6;
+}
+
 .prose pre code .kt,
 .prose .chroma .kt {
-  color: #4fc1ff;
+  color: #ffd76a;
 }
 
 .prose pre code .nf,
@@ -969,7 +972,7 @@ html.show-line-numbers .prose pre.code-lines-ready .code-line-gutter {
 .prose .chroma .fm,
 .prose pre code .nc,
 .prose .chroma .nc {
-  color: #ffb454;
+  color: #ffae57;
 }
 
 .prose pre code .nb,
@@ -978,7 +981,7 @@ html.show-line-numbers .prose pre.code-lines-ready .code-line-gutter {
 .prose .chroma .nx,
 .prose pre code .n,
 .prose .chroma .n {
-  color: #d7ba7d;
+  color: #d8c38f;
 }
 
 .prose pre code .s,
@@ -995,7 +998,7 @@ html.show-line-numbers .prose pre.code-lines-ready .code-line-gutter {
 .prose .chroma .se,
 .prose pre code .sr,
 .prose .chroma .sr {
-  color: #ce9178;
+  color: #d99672;
 }
 
 .prose pre code .m,
@@ -1008,7 +1011,7 @@ html.show-line-numbers .prose pre.code-lines-ready .code-line-gutter {
 .prose .chroma .mh,
 .prose pre code .mo,
 .prose .chroma .mo {
-  color: #b5cea8;
+  color: #ffd76a;
 }
 
 .prose pre code .c,
@@ -1044,7 +1047,7 @@ html.show-line-numbers .prose pre.code-lines-ready .code-line-gutter {
 .prose .chroma .nl,
 .prose pre code .no,
 .prose .chroma .no {
-  color: #c586c0;
+  color: #d18dff;
 }
 
 .prose pre code .err,
