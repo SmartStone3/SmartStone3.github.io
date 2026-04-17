@@ -1,5 +1,5 @@
 ---
-title: "GASDocumentation - Unreal Engine 5 GameplayAbilitySystem 完整指南"
+title: "GAS完整指南"
 date: 2026-04-17T10:00:00+08:00
 draft: false
 slug: "GAS Documentation"
