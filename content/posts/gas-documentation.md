@@ -7,6 +7,8 @@ tags: ["Unreal Engine", "GAS", "GameplayAbilitySystem", "C++"]
 featured: true
 ---
 
+> **说明：** 本文基于 [tranek/GASDocumentation](https://github.com/tranek/GASDocumentation) 的中文翻译，仅供学习参考。
+
 我对 Unreal Engine 5 的 GameplayAbilitySystem 插件（GAS）的理解，附带一个简单的多人联机示例项目。这不是官方文档，本项目和我本人都与 Epic Games 没有关联。我不保证这些信息的准确性。
 
 这份文档的目标是解释 GAS 中的主要概念和类，并基于我的使用经验补充一些说明。社区用户之间存在很多关于 GAS 的“口口相传经验”，我希望把我知道的内容都分享在这里。
